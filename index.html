@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas - To wyw ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 主标题 -->
+    <div class="title">
+        <h1>🎄 Merry Christmas 🎄</h1>
+    </div>
+
+    <!-- Three. js Canvas 容器 -->
+    <div id="canvas-container"></div>
+
+    <!-- 控制面板 -->
+    <div class="control-panel">
+        <h3>🎮 控制面板</h3>
+        
+        <div class="control-item">
+            <label for="speed">🔄 旋转速度</label>
+            <input type="range" id="speed" min="0" max="5" step="0.1" value="1">
+            <span id="speed-value">1.0</span>
+        </div>
+
+        <div class="control-item">
+            <label for="height">📏 树的高度</label>
+            <input type="range" id="height" min="50" max="150" step="5" value="100">
+            <span id="height-value">100</span>
+        </div>
+
+        <div class="control-item">
+            <label for="size">✨ 粒子大小</label>
+            <input type="range" id="size" min="0. 5" max="3" step="0.1" value="1">
+            <span id="size-value">1.0</span>
+        </div>
+    </div>
+
+    <!-- 水印 -->
+    <div class="watermark">
+        To:  wyw ❤️
+    </div>
+
+    <!-- Three.js 库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

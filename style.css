@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+    color: white;
+}
+
+#canvas-container {
+    position:  fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* 主标题样式 */
+.title {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+}
+
+. title h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #ffd700;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.6),
+        0 0 30px rgba(255, 215, 0, 0.4);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 10px rgba(255, 215, 0, 0.8),
+            0 0 20px rgba(255, 215, 0, 0.6),
+            0 0 30px rgba(255, 215, 0, 0.4);
+    }
+    to {
+        text-shadow: 
+            0 0 20px rgba(255, 215, 0, 1),
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 0 40px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* 控制面板样式 */
+.control-panel {
+    position: fixed;
+    top: 120px;
+    left: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius:  15px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    z-index: 10;
+    min-width: 280px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.control-panel h3 {
+    color: #ffd700;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+. control-item {
+    margin-bottom: 20px;
+}
+
+.control-item label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight:  400;
+}
+
+.control-item span {
+    display: inline-block;
+    margin-left: 10px;
+    color: #ffd700;
+    font-weight: 600;
+    min-width: 40px;
+}
+
+/* 滑动条样式 */
+input[type="range"] {
+    width: 180px;
+    height: 6px;
+    background: linear-gradient(90deg, #0d5c0d, #26b326);
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+input[type="range"]: :-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #ffd700;
+    border-radius: 50%;
+    cursor:  pointer;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 1);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #ffd700;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 1);
+}
+
+/* 水印样式 */
+. watermark {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: rgba(255, 215, 0, 0.8);
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.6),
+        0 0 20px rgba(255, 215, 0, 0.4);
+    z-index: 10;
+    pointer-events: none;
+    animation: watermarkGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes watermarkGlow {
+    from {
+        text-shadow: 
+            0 0 10px rgba(255, 215, 0, 0.6),
+            0 0 20px rgba(255, 215, 0, 0.4);
+    }
+    to {
+        text-shadow: 
+            0 0 15px rgba(255, 215, 0, 0.9),
+            0 0 25px rgba(255, 215, 0, 0.6),
+            0 0 35px rgba(255, 215, 0, 0.3);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .title h1 {
+        font-size: 2rem;
+    }
+
+    .control-panel {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+        min-width: 260px;
+    }
+
+    . watermark {
+        font-size: 1.5rem;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    input[type="range"] {
+        width: 150px;
+    }
+}
