@@ -1,0 +1,15 @@
+body { margin: 0; overflow: hidden; }
+#canvas-container { width: 100vw; height: 100vh; }
+#info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #ffccf5;
+    font-family: monospace;
+    font-size: 14px;
+    z-index: 100;
+    background-color: rgba(26, 11, 26, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none; /* 让鼠标事件穿透到canvas */
+}
